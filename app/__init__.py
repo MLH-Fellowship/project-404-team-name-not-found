@@ -1,6 +1,5 @@
 import os
 import datetime
-from venv import create
 from playhouse.shortcuts import model_to_dict
 
 from flask import Flask, render_template, request
@@ -26,8 +25,8 @@ class TimelinePost(Model):
     content = TextField()
     created_at = DateTimeField(default=datetime.datetime.now)
 
-    class Meta:
-        database = mydb
+class Meta:
+    database = mydb
 
 mydb.connect()
 mydb.create_tables([TimelinePost])
