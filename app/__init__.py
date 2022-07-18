@@ -20,7 +20,6 @@ mydb = MySQLDatabase(
     port=3306
 )
 
-"""
 class TimelinePost(Model):
     name = CharField()
     email = CharField()
@@ -32,7 +31,7 @@ class TimelinePost(Model):
 
 mydb.connect()
 mydb.create_tables([TimelinePost])
-"""
+
 print(mydb)
 
 app.config.update(dict(
