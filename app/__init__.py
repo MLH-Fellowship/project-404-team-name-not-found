@@ -13,11 +13,13 @@ load_dotenv()
 app = Flask(__name__)
 
 mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
-    user = os.getenv("MYSQL_USER"),
-    password = os.getenv("MYSQL_PASSWORD"),
+    user=os.getenv("MYSQL_USER"),
+    password=os.getenv("MYSQL_PASSWORD"),
     host=os.getenv("MYSQL_HOST"),
     port=3306
 )
+
+print(mydb)
 
 class TimelinePost(Model):
     name = CharField()
@@ -30,8 +32,6 @@ class TimelinePost(Model):
 
 mydb.connect()
 mydb.create_tables([TimelinePost])
-
-print(mydb)
 
 app.config.update(dict(
     MAIL_SERVER = 'smtp.mail.yahoo.com',
