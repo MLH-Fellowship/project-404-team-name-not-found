@@ -1,12 +1,24 @@
 import os
 from flask import Flask, render_template, request
 from flask_mail import Mail, Message
+from peewee import *
 
 
 from dotenv import load_dotenv
 
 load_dotenv()
 app = Flask(__name__)
+
+mydb =
+MySQLDatabse(os.getenv("MYSQL_DATABSE"),
+    user = os.getenv("MYSQL_USER"),
+    password = os.getenv("MYSQL_PASSWORD"),
+    host=os.getenv("MYSQL_HOST"),
+    port=3306
+)
+
+print(mydb)
+
 app.config.update(dict(
     MAIL_SERVER = 'smtp.mail.yahoo.com',
     MAIL_PORT = '465',
