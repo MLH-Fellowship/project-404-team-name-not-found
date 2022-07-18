@@ -12,7 +12,7 @@ from dotenv import load_dotenv
 load_dotenv()
 app = Flask(__name__)
 
-mydb = MySQLDatabase(os.getenv("MYSQL_DATABSE"),
+mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
     user = os.getenv("MYSQL_USER"),
     password = os.getenv("MYSQL_PASSWORD"),
     host=os.getenv("MYSQL_HOST"),
@@ -71,7 +71,6 @@ def contact():
         mail.send(msg)
     return render_template('contact.html', title="Get in Touch!", url=os.getenv("URL"))
 
-"""
 @app.route('/api/timeline_post', methods=['POST'])
 def post_time_line_post():
     name = request.form['name']
@@ -89,4 +88,3 @@ def get_time_line_post():
             for p in TimelinePost.select().order_by(TimelinePost.created_at.desc())
         ]
     }
-"""
