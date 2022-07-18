@@ -20,6 +20,7 @@ mydb = MySQLDatabase(
     port=3306
 )
 
+"""
 class TimelinePost(Model):
     name = CharField()
     email = CharField()
@@ -31,6 +32,7 @@ class TimelinePost(Model):
 
 mydb.connect()
 mydb.create_tables([TimelinePost])
+"""
 print(mydb)
 
 app.config.update(dict(
@@ -71,6 +73,7 @@ def contact():
         mail.send(msg)
     return render_template('contact.html', title="Get in Touch!", url=os.getenv("URL"))
 
+"""
 @app.route('/api/timeline_post', methods=['POST'])
 def post_time_line_post():
     name = request.form['name']
@@ -88,3 +91,4 @@ def get_time_line_post():
             for p in TimelinePost.select().order_by(TimelinePost.created_at.desc())
         ]
     }
+"""
