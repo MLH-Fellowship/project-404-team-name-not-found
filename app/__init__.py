@@ -12,7 +12,8 @@ from dotenv import load_dotenv
 load_dotenv()
 app = Flask(__name__)
 
-mydb = MySQLDatabase(os.getenv("MYSQL_DATABSE"),
+mydb = MySQLDatabase(
+    os.getenv("MYSQL_DATABSE"),
     user = os.getenv("MYSQL_USER"),
     password = os.getenv("MYSQL_PASSWORD"),
     host=os.getenv("MYSQL_HOST"),
@@ -25,8 +26,8 @@ class TimelinePost(Model):
     content = TextField()
     created_at = DateTimeField(default=datetime.datetime.now)
 
-class Meta:
-    database = mydb
+    class Meta:
+        database = mydb
 
 mydb.connect()
 mydb.create_tables([TimelinePost])
