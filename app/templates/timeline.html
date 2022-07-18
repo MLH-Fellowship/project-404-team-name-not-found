@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block title %} Resume {% endblock%} 
+{% block content %} 
+<head>
+ 
+   <link lang='sass' rel="stylesheet" href="./static/styles/contact.css">
+   <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+<script src="./static/index.js" defer></script>
+
+</head>
+<body>
+
+<br></br>
+<div class="titleheading">
+<h2 align="center" >Timeline</h2>
+</div>
+<div class="container" >
+ <div class="px-4 py-5 my-5 text-center border-bottom" >
+
+<h3 align="left"> Make a timeline post!</h3>
+
+<br> </br>
+<form id="form">
+  <div class="form-row">
+    <label for="inputEmail">Name</label>
+    <input type="text" id="name"class="form-control" name="name" placeholder="name">
+  </div>
+    <br></br>
+  <div class="form-row">
+    <label for="inputTitle">Email </label>
+    <input type="text" id="email"class="form-control" name="email" placeholder="email">
+  </div>
+    <br></br>
+    <div class="form-row">
+    <label for="inputMessage">Content </label>
+    <input type="text" id="content" class="form-control" name="content"placeholder="content" style="height: 150px">
+  </div>
+  <br></br>
+  <button type="submit" value="submit"class="btn btn-primary">Submit</button>
+</form>
+</div>
+</div>
+<div class="container">
+<h3> Timeline Submissions </h3>
+<br></br>
+<div class="words" id='entries'></div>
+</div>
+
+  
+
+<br></br>
+
+
+<script>
+
+
+
+
+</script>
+
+
+</body>
+{% endblock %}
+</html>
+

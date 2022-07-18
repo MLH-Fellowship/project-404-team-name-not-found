@@ -7,11 +7,16 @@
 
 }
 
+.container {
+        width: 800px;
+        background-color: skyblue;
+    }
 .titleheading{
   background-color: "blue";
 }
-p, h1, h2, h3, h4, h5, h6, button {
+ h1, h2, h3, h4, h5, h6, button {
     font-family: "Roboto", serif;
+    text-align: center;
 }
 
 body{
@@ -24,4 +29,8 @@ input{
 
 label{
   font-family: "Roboto", serif;
+}
+
+p {
+    text-align: left;
 }
