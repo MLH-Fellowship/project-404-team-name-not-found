@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 load_dotenv()
 app = Flask(__name__)
 
-mydb = MySQLDatabse(os.getenv("MYSQL_DATABSE"),
+mydb = MySQLDatabase(os.getenv("MYSQL_DATABSE"),
     user = os.getenv("MYSQL_USER"),
     password = os.getenv("MYSQL_PASSWORD"),
     host=os.getenv("MYSQL_HOST"),
