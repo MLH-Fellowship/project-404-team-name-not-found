@@ -1,5 +1,8 @@
+from crypt import methods
 import os
 import datetime
+
+from pymysql import Time
 from playhouse.shortcuts import model_to_dict
 
 from flask import Flask, render_template, request
@@ -88,6 +91,14 @@ def get_time_line_post():
             model_to_dict(p)
             for p in TimelinePost.select().order_by(TimelinePost.created_at.desc())
         ]
+    }
+
+@app.route('/api/timeline_post', methods=['DELETE'])
+def del_time_line_post():
+    post = TimelinePost.get(TimelinePost.name == request.form['name'])
+    post.delete_instance()
+    return{
+        "Instance deleted":200
     }
 
 @app.route('/timeline')
