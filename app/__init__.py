@@ -20,6 +20,7 @@ mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
 )
 
 print(mydb)
+"""
 mydb.connect()
 
 class TimelinePost(Model):
@@ -32,7 +33,7 @@ class TimelinePost(Model):
         database = mydb
 
 mydb.create_tables([TimelinePost])
-
+"""
 app.config.update(dict(
     MAIL_SERVER = 'smtp.mail.yahoo.com',
     MAIL_PORT = '465',
