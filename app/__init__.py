@@ -20,9 +20,9 @@ mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
 )
 
 print(mydb)
-"""
-mydb.connect()
 
+mydb.connect()
+"""
 class TimelinePost(Model):
     name = CharField()
     email = CharField()
