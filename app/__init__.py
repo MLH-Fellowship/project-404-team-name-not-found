@@ -20,9 +20,9 @@ mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
 )
 
 print(mydb)
-
-mydb.connect() 
 """
+mydb.connect() 
+
 class TimelinePost(Model):
     name = CharField()
     email = CharField()
@@ -34,6 +34,7 @@ class TimelinePost(Model):
 
 mydb.create_tables([TimelinePost])
 """
+
 app.config.update(dict(
     MAIL_SERVER = 'smtp.mail.yahoo.com',
     MAIL_PORT = '465',
@@ -89,3 +90,7 @@ def get_time_line_post():
             for p in TimelinePost.select().order_by(TimelinePost.created_at.desc())
         ]
     }
+
+@app.route('/timeline')
+def timeline():
+    return render_template('timeline.html', title="Timeline")
