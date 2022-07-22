@@ -25,3 +25,30 @@ input{
 label{
   font-family: "Roboto", serif;
 }
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  border-radius: 1em;
+  overflow: hidden;
+  color: white;
+}
+
+td, th {
+  text-align: left;
+  padding: 1em;
+  padding-left: 20px;
+  border-bottom: 2px solid skyblue;
+}
+
+#del{
+  width: 7%;
+}
+
+tr:nth-child(even) {
+  background-color: #7384e6;
+}
+
+tr:nth-child(odd) {
+  background-color: #4b506d;
+}
